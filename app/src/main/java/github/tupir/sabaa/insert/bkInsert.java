@@ -5,12 +5,17 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.Spinner;
 
 import github.tupir.sabaa.MainActivity;
 import github.tupir.sabaa.R;
 
 public class bkInsert extends AppCompatActivity {
     Button btnsimpanBK;
+    Spinner spinner;
+    DatePicker datePicker;
+
     View view;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -31,8 +31,8 @@ import java.util.List;
 import github.tupir.sabaa.AppController;
 import github.tupir.sabaa.R;
 import github.tupir.sabaa.adapter.AdapterBM;
+import github.tupir.sabaa.adapter.AdapterMB;
 import github.tupir.sabaa.adapter.BarangMasuk;
-import github.tupir.sabaa.adapter.CustomListAdapter;
 import github.tupir.sabaa.insert.bmInsert;
 
 import static github.tupir.sabaa.AppController.TAG;
@@ -62,7 +62,7 @@ public class bmFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_bm, container, false);
         rootView.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
 
-        lv = (ListView) rootView.findViewById(R.id.list);
+        lv = (ListView) rootView.findViewById(R.id.listBM);
 
         bmList = new ArrayList<BarangMasuk>();
         adapterBM = new AdapterBM(getActivity(), bmList);
@@ -79,9 +79,11 @@ public class bmFragment extends Fragment {
                     for(int i=0;i< obj.length();i++) {
                         JSONObject json     = obj.getJSONObject(i);
                         BarangMasuk bm = new BarangMasuk();
+                        bm.setIdBarang(json.getString("idBM"));
                         bm.setNamaBarang(json.getString("namaBarang"));
                         bm.setJumlahBarang(json.getString("jumlahBarang"));
-                        bm.setTglBarang(json.getString("tglKel"));
+                        bm.setTglBarang(json.getString("tglMasuk"));
+                        bm.setSupplierBarang(json.getString("supplier"));
 
                         //Adding data into array
                         bmList.add(bm);

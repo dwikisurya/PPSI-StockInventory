@@ -47,20 +47,21 @@ public class AdapterBM extends BaseAdapter {
         if (convertView == null)
             convertView = inflater.inflate(R.layout.bm_listrow, null);
 
-        TextView namabarang = (TextView) convertView.findViewById(R.id.bm_namaBarang);
-        TextView jumlahbarang = (TextView) convertView.findViewById(R.id.bm_jumlahBarang);
-        TextView tglbarang = (TextView) convertView.findViewById(R.id.bm_tglBarang);
+        TextView idbarang = (TextView) convertView.findViewById(R.id.BM_SET_ID);
+        TextView namabarang = (TextView) convertView.findViewById(R.id.BM_SET_NAMA);
+        TextView jumlahbarang = (TextView) convertView.findViewById(R.id.BM_SET_JUMLAH);
+        TextView tglbarang = (TextView) convertView.findViewById(R.id.BM_SET_TGL);
+        TextView supplier = (TextView) convertView.findViewById(R.id.BM_SET_TUJUAN);
 
         // getting movie data for the row
         BarangMasuk bm = bmItems.get(position);
 
-        // namaBarang
+        //set barang masuk
+        idbarang.setText(bm.getIdBarang());
         namabarang.setText(bm.getNamaBarang());
-        // jumlahBarang
         jumlahbarang.setText(bm.getJumlahBarang());
-        // tglBarang
         tglbarang.setText(bm.getTglBarang());
-
+        supplier.setText(bm.getSupplierBarang());
         return convertView;
     }
 }
