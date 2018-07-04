@@ -39,10 +39,10 @@ import static github.tupir.sabaa.AppController.TAG;
 
 public class bmFragment extends Fragment {
     private Button button1;
-    private static final String url = "http://192.168.43.20/sabaa/barangmasuk.php";
+    private static final String url = "http://192.168.43.20/sabaa/barangMasuk.php";
     private List<BarangMasuk> bmList = new ArrayList<BarangMasuk>();
     private ListView lv;
-    private AdapterBM adapter;
+    private AdapterBM adapterBM;
 
     public static bmFragment newInstance() {
         bmFragment fragment = new bmFragment();
@@ -65,8 +65,8 @@ public class bmFragment extends Fragment {
         lv = (ListView) rootView.findViewById(R.id.list);
 
         bmList = new ArrayList<BarangMasuk>();
-        adapter = new AdapterBM(getActivity(), bmList);
-        lv.setAdapter(adapter);
+        adapterBM = new AdapterBM(getActivity(), bmList);
+        lv.setAdapter(adapterBM);
 
         //Create JsonObjectRequest
         JsonObjectRequest bmRequest = new JsonObjectRequest(Request.Method.GET, url, null,new Response.Listener<JSONObject>(){
@@ -93,7 +93,7 @@ public class bmFragment extends Fragment {
                 }
                 // notifying list adapter about data changes
                 // so that it renders the list view with updated data
-                adapter.notifyDataSetChanged();
+                adapterBM.notifyDataSetChanged();
 
             }
         }, new Response.ErrorListener() {
@@ -104,6 +104,7 @@ public class bmFragment extends Fragment {
         });
         // Adding request to request queue
         AppController.getInstance().addToRequestQueue(bmRequest);
+
         return rootView;
     }
 

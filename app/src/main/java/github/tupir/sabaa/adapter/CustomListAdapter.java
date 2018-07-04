@@ -54,22 +54,25 @@ public class CustomListAdapter extends BaseAdapter {
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         if (convertView == null)
             convertView = inflater.inflate(R.layout.bk_listrow, null);
+        TextView idbarang = (TextView) convertView.findViewById(R.id.BK_SET_ID);
+        TextView namabarang = (TextView) convertView.findViewById(R.id.BK_SET_NAMA);
+        TextView jumlahbarang = (TextView) convertView.findViewById(R.id.BK_SET_JUMLAH);
+        TextView tglbarang = (TextView) convertView.findViewById(R.id.BK_SET_TGL);
+        TextView tujuanbarang = (TextView) convertView.findViewById(R.id.BK_SET_TUJUAN);
 
-        TextView namabarang = (TextView) convertView.findViewById(R.id.txtnamabarang);
-        TextView jumlahbarang = (TextView) convertView.findViewById(R.id.txtjumlahbarang);
-        TextView tglbarang = (TextView) convertView.findViewById(R.id.txttglbarang);
-
-        // getting movie data for the row
+        // Getting Barang Keluar from row
         BarangKeluar bk = bkItems.get(position);
 
-
+        // idbarang
+        idbarang.setText(bk.getIdBarang());
         // namaBarang
         namabarang.setText(bk.getNamaBarang());
         // jumlahBarang
         jumlahbarang.setText(bk.getJumlahBarang());
         // tglBarang
         tglbarang.setText(bk.getTglBarang());
-
+        // tujuanBarang
+        tujuanbarang.setText(bk.getTujuanBarang());
         return convertView;
     }
 }

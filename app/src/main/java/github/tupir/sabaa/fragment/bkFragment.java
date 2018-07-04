@@ -38,7 +38,7 @@ import static github.tupir.sabaa.AppController.TAG;
 public class bkFragment extends Fragment {
     private Button button1;
 
-    private static final String url = "http://192.168.43.20/sabaa/testphp.php";
+    private static final String url = "http://192.168.43.20/sabaa/barangKeluar.php";
     private List<BarangKeluar> bkList = new ArrayList<BarangKeluar>();
     private ListView lv;
     private CustomListAdapter adapter;
@@ -79,10 +79,12 @@ public class bkFragment extends Fragment {
                     for(int i=0;i< obj.length();i++) {
                         JSONObject json     = obj.getJSONObject(i);
                         BarangKeluar bk = new BarangKeluar();
+
+                        bk.setIdBarang(json.getString("idBK"));
                         bk.setNamaBarang(json.getString("namaBarang"));
                         bk.setJumlahBarang(json.getString("jumlahBarang"));
                         bk.setTglBarang(json.getString("tglKel"));
-
+                        bk.setTujuanBarang(json.getString("tujuanBarang"));
                         //Adding data into array
                         bkList.add(bk);
                     }
