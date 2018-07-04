@@ -1,16 +1,22 @@
+/*
+ * *
+ *   * Created by Tupir
+ *
+ */
+
 package github.tupir.sabaa.adapter;
 
-public class BarangKeluar {
+public class MintaBarang {
     private String namaBarang, tglBarang ,jumlahBarang;
 
-    public BarangKeluar() {
+    public MintaBarang(){
+
     }
 
-    public BarangKeluar(String namaBarang, String tglBarang, String jumlahBarang) {
+    public MintaBarang(String namaBarang, String tglBarang, String jumlahBarang) {
         this.namaBarang = namaBarang;
         this.tglBarang = tglBarang;
         this.jumlahBarang = jumlahBarang;
-
     }
 
     public String getNamaBarang() {
@@ -21,15 +27,6 @@ public class BarangKeluar {
         this.namaBarang = namaBarang;
     }
 
-
-    public String getJumlahBarang() {
-        return jumlahBarang;
-    }
-
-    public void setJumlahBarang(String jumlahBarang ) {
-        this.jumlahBarang = jumlahBarang;
-    }
-
     public String getTglBarang() {
         return tglBarang;
     }
@@ -38,6 +35,11 @@ public class BarangKeluar {
         this.tglBarang = tglBarang;
     }
 
+    public String getJumlahBarang() {
+        return jumlahBarang;
+    }
 
+    public void setJumlahBarang(String jumlahBarang) {
+        this.jumlahBarang = jumlahBarang;
+    }
 }
-
