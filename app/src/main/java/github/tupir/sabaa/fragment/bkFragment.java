@@ -2,6 +2,7 @@ package github.tupir.sabaa.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -117,7 +118,9 @@ public class bkFragment extends Fragment {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent intent = new Intent(getActivity(), bkInsert.class);
+
                 startActivity(intent);
             }
         });

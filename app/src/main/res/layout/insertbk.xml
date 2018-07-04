@@ -8,10 +8,10 @@
     <Button
         android:id="@+id/btnSimpanBK"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/bk_keterangan"
+        android:layout_height="30dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="111dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="153dp"
         android:background="@android:color/white"
         android:text="Simpan"
         tools:layout_editor_absoluteX="280dp"
@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/textView6"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="130dp"
         android:text="Jumlah Barang" />
 
     <TextView
@@ -50,55 +50,41 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/textView6"
-        android:layout_marginTop="73dp"
+        android:layout_marginTop="70dp"
         android:text="Nama Barang" />
 
     <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="13dp"
+        android:layout_alignBottom="@+id/editText8"
+        android:layout_marginStart="20dp"
         android:text="IdBarang" />
 
     <EditText
         android:id="@+id/bk_keterangan"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView6"
-        android:layout_alignStart="@+id/bk_idbarang"
+        android:layout_height="30dp"
+        android:layout_alignBottom="@+id/textView6"
+        android:layout_alignParentEnd="true"
         android:ems="10"
         android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/bk_jumlahbarang"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/bk_idbarang"
-        android:layout_alignTop="@+id/textView9"
-        android:ems="10"
-        android:inputType="textPersonName" />
-
-    <EditText
-        android:id="@+id/editText8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginEnd="31dp"
+        android:layout_height="30dp"
+        android:layout_alignBottom="@+id/textView9"
+        android:layout_alignStart="@+id/bk_keterangan"
         android:ems="10"
         android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/bk_idbarang"
-        android:layout_width="wrap_content"
-        android:layout_height="21dp"
-        android:layout_alignParentEnd="true"
+        android:layout_width="205dp"
+        android:layout_height="30dp"
         android:layout_alignParentTop="true"
-        android:layout_marginEnd="31dp"
-        android:layout_marginTop="25dp"
+        android:layout_alignStart="@+id/bk_keterangan"
         android:ems="10"
         android:inputType="textPersonName" />
 
@@ -106,16 +92,15 @@
         android:id="@+id/spinner"
         android:layout_width="206dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/textView8"
-        android:layout_marginStart="115dp" />
+        android:layout_alignStart="@+id/bk_keterangan"
+        android:layout_alignTop="@+id/textView8" />
 
     <EditText
         android:id="@+id/editText"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView10"
-        android:layout_alignEnd="@+id/btnSimpanBK"
+        android:layout_height="30dp"
+        android:layout_alignBottom="@+id/textView10"
+        android:layout_alignParentEnd="true"
         android:ems="10"
         android:inputType="date" />
 
