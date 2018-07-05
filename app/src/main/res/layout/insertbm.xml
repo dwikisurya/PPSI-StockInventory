@@ -1,122 +1,100 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/btnSimpanBM"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/bk_keterangan"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="111dp"
-        android:background="@android:color/white"
-        android:text="Simpan"
-        tools:layout_editor_absoluteX="280dp"
-        tools:layout_editor_absoluteY="276dp" />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="25dp">
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/textView7"
-        android:layout_marginBottom="219dp"
-        android:text="Harga Beli" />
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/a"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/textView7"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="204dp"
-        android:text="Tanggal Masuk" />
+            <EditText
+                android:id="@+id/bmidbarang"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Id Barang"
+                android:inputType="none" />
+        </android.support.design.widget.TextInputLayout>
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/textView6"
-        android:layout_marginTop="124dp"
-        android:text="Jumlah Barang" />
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/textView6"
-        android:layout_marginTop="73dp"
-        android:text="Nama Barang" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nama Barang" />
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="13dp"
-        android:text="IdBarang" />
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/spinnerBM"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+        </android.support.design.widget.TextInputLayout>
 
-    <EditText
-        android:id="@+id/bk_keterangan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView6"
-        android:layout_alignStart="@+id/bk_idbarang"
-        android:ems="10"
-        android:inputType="textPersonName" />
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
 
-    <EditText
-        android:id="@+id/editText10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/bk_idbarang"
-        android:layout_alignTop="@+id/textView9"
-        android:ems="10"
-        android:inputType="textPersonName" />
+            <EditText
+                android:id="@+id/inputBM_Jumlah"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Input Jumlah Barang"
+                android:inputType="number" />
+        </android.support.design.widget.TextInputLayout>
 
-    <EditText
-        android:id="@+id/editText9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView8"
-        android:layout_alignStart="@+id/bk_keterangan"
-        android:ems="10"
-        android:inputType="textPersonName" />
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_P"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
 
-    <EditText
-        android:id="@+id/editText8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginEnd="31dp"
-        android:ems="10"
-        android:inputType="textPersonName" />
+            <EditText
+                android:id="@+id/inputBM_Date"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:hint="Select Date..."
+                android:textSize="20sp" />
+        </android.support.design.widget.TextInputLayout>
 
-    <EditText
-        android:id="@+id/bk_idbarang"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginEnd="31dp"
-        android:ems="10"
-        android:inputType="textPersonName" />
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_M"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
 
-    <EditText
-        android:id="@+id/editText11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView10"
-        android:layout_alignStart="@+id/bk_keterangan"
-        android:ems="10"
-        android:inputType="date" />
+            <EditText
+                android:id="@+id/inputBM_Supplier"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Supplier"
+                android:inputType="text" />
 
-</RelativeLayout>
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnSimpanBM"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:background="@color/colorPrimary"
+            android:text="Simpan"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>
