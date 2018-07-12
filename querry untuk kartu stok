@@ -1,0 +1,3 @@
+select namaBarang, jumlahBarang, tglKeluar, '',tujuanBarang from barangKeluar
+union
+select namaBarang, jumlahBarang, '' ,tglMasuk, supplier from barangMasuk
