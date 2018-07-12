@@ -46,29 +46,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             Fragment fragment;
             switch (item.getItemId()) {
-                case R.id.navigation_shop:
+                case R.id.navigation_home:
                     toolbar.setTitle("Home");
                     fragment = homeFragment.newInstance();
                     loadFragment(fragment);
                     return true;
-                case R.id.navigation_gifts:
+                case R.id.navigation_barangkeluar:
                     toolbar.setTitle("Barang Keluar");
                     fragment = bkFragment.newInstance();
                     loadFragment(fragment);
                     return true;
-                case R.id.navigation_cart:
+                case R.id.navigation_barangmasuk:
                     toolbar.setTitle("Barang Masuk");
                     fragment = bmFragment.newInstance();
                     loadFragment(fragment);
                     return true;
-                case R.id.navigation_profile:
+                case R.id.navigation_mintabarang:
                     toolbar.setTitle("Minta Barang");
                     fragment = mbFragment.newInstance();
-                    loadFragment(fragment);
-                    return true;
-                case R.id.navigation_ks:
-                    toolbar.setTitle("Minta Barang");
-                    fragment = ksFragment.newInstance();
                     loadFragment(fragment);
                     return true;
             }

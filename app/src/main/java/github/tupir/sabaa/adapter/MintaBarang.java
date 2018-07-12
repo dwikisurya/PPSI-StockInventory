@@ -7,19 +7,29 @@
 package github.tupir.sabaa.adapter;
 
 public class MintaBarang {
-    private String namaBarang, tglBarang ,jumlahBarang;
+    private String pemintaBarang,namaBarang, tglBarang ,jumlahBarang;
 
     public MintaBarang(){
 
     }
 
-    public MintaBarang(String namaBarang, String tglBarang, String jumlahBarang) {
+    public MintaBarang(String pemintaBarang,String namaBarang, String tglBarang, String jumlahBarang) {
+        this.pemintaBarang = pemintaBarang;
         this.namaBarang = namaBarang;
         this.tglBarang = tglBarang;
         this.jumlahBarang = jumlahBarang;
     }
 
+    public String getPemintaBarang() {
+        return pemintaBarang;
+    }
+
+    public void setPemintaBarang(String pemintaBarang) {
+        this.pemintaBarang = pemintaBarang;
+    }
+
     public String getNamaBarang() {
+
         return namaBarang;
     }
 

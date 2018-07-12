@@ -6,7 +6,6 @@
 
 package github.tupir.sabaa.adapter;
 
-
 import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -19,25 +18,25 @@ import java.util.List;
 
 import github.tupir.sabaa.R;
 
-public class AdapterMB extends BaseAdapter{
+public class AdapaterMasterBarang extends BaseAdapter {
     private Activity activity;
     private LayoutInflater inflater;
-    private List<MintaBarang> mbItems;
+    private List<MasterBarang> masterItems;
 
 
-    public AdapterMB(Activity activity, List<MintaBarang> mbItems) {
+    public AdapaterMasterBarang(Activity activity, List<MasterBarang> masterItems) {
         this.activity = activity;
-        this.mbItems = mbItems;
+        this.masterItems = masterItems;
     }
 
     @Override
     public int getCount() {
-        return mbItems.size();
+        return masterItems.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return mbItems.get(position);
+        return masterItems.get(position);
     }
 
     @Override
@@ -52,24 +51,19 @@ public class AdapterMB extends BaseAdapter{
             inflater = (LayoutInflater) activity
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         if (convertView == null)
-            convertView = inflater.inflate(R.layout.mb_listrow, null);
+            convertView = inflater.inflate(R.layout.masterbarang_listrow, null);
 
-        TextView pemintabarang = (TextView) convertView.findViewById(R.id.mb_setPemintaBarang);
-        TextView namabarang = (TextView) convertView.findViewById(R.id.mb_setNamaBarang);
-        TextView jumlahbarang = (TextView) convertView.findViewById(R.id.mb_setJumlahBarang);
-        TextView tglbarang = (TextView) convertView.findViewById(R.id.mb_setTglBarang);
+        TextView idbarang = (TextView) convertView.findViewById(R.id.masterBarang_id);
+        TextView namabarang = (TextView) convertView.findViewById(R.id.masterBarang_nama);
+        TextView stokbarang = (TextView) convertView.findViewById(R.id.masterBarang_stok);
 
         // getting movie data for the row
-        MintaBarang mb = mbItems.get(position);
+        MasterBarang mb = masterItems.get(position);
 
-        // pemintaBarang
-        pemintabarang.setText(mb.getPemintaBarang());
-        // namaBarang
+        //set barang masuk
+        idbarang.setText(mb.getIdBarang());
         namabarang.setText(mb.getNamaBarang());
-        // jumlahBarang
-        jumlahbarang.setText(mb.getJumlahBarang());
-        // tglBarang
-        tglbarang.setText(mb.getTglBarang());
+        stokbarang.setText(mb.getStokBarang());
 
         return convertView;
     }

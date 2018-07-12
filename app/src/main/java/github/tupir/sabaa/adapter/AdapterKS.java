@@ -53,28 +53,22 @@ public class AdapterKS extends BaseAdapter{
         if (convertView == null)
             convertView = inflater.inflate(R.layout.ks_listrow, null);
 
-        //TextView bm_namabarang = (TextView) convertView.findViewById(R.id.mb_namaBarang);
-        //TextView bm_jumlahbarang  = (TextView) convertView.findViewById(R.id.mb_jumlahBarang);
-        //TextView bm_tglbarang  = (TextView) convertView.findViewById(R.id.mb_tglBarang);
-        // TextView bm_supplier = (TextView) convertView.findViewById(R.id.);
-
-        // TextView bk_namabarang = (TextView) convertView.findViewById(R.id.mb_namaBarang);
-        //TextView bk_jumlahbarang  = (TextView) convertView.findViewById(R.id.mb_jumlahBarang);
-        //TextView bk_tglbarang  = (TextView) convertView.findViewById(R.id.mb_tglBarang);
-        //TextView bk_tujuan= (TextView) convertView.findViewById(R.id.);
+        TextView ks_id = (TextView) convertView.findViewById(R.id.ks_setIDks);
+        TextView ks_nama = (TextView) convertView.findViewById(R.id.ks_setNamaBarang);
+        TextView ks_jumlah = (TextView) convertView.findViewById(R.id.ks_setJumlahBarang);
+        TextView ks_harga = (TextView) convertView.findViewById(R.id.ks_setHargaBarang);
+        TextView ks_discount = (TextView) convertView.findViewById(R.id.ks_setDiscountBarang);
+        TextView ks_grandtot = (TextView) convertView.findViewById(R.id.ks_setHargaTotal);
 
         // getting movie data for the row
         KartuStok ks = ksItems.get(position);
-
-        //bm_namabarang.setText(ks.getBm_namabarang());
-        //bm_jumlahbarang.setText(ks.getBm_jumlahBarang());
-        //bm_tglbarang.setText(ks.getBm_tglBarang());
-        //bm_supplier.setText(ks.getBm_supplier());
-
-        //bk_namabarang.setText(ks.getBk_namabarang());
-        //bk_jumlahbarang.setText(ks.getBk_jumlahBarang());
-        //bk_tglbarang.setText(ks.getBk_tglBarang());
-        //bk_tujuan.setText(ks.getBk_tujuanBarang());
+        ks_id.setText(ks.getIdPO());
+        ks_nama.setText(ks.getNamaBarang());
+        ks_jumlah.setText(ks.getJumlahBarang());
+        ks_harga.setText(ks.getHargaBarang());
+        ks_discount.setText(ks.getDiscountPO());
+        ks_grandtot.setText(ks.getTotalHarga());
+      ;
         return convertView;
     }
 }

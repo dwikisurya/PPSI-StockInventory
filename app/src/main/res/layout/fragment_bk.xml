@@ -14,17 +14,11 @@
 
     <Button
         android:id="@+id/btnFragmentBK"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="0dp"
-        android:layout_marginEnd="0dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:background="@android:color/white"
-        android:paddingTop="0dp"
-        android:text="Tambah"
-        tools:layout_editor_absoluteX="280dp"
-        tools:layout_editor_absoluteY="406dp" />
+        android:background="@color/colorPrimary"
+        android:text="Tambah Data"
+        android:textColor="@android:color/white" />
 
 </LinearLayout>

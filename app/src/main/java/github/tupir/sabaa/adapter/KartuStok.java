@@ -7,83 +7,68 @@
 package github.tupir.sabaa.adapter;
 
 public class KartuStok {
-    private String bm_namabarang, bm_tglBarang , bm_jumlahBarang, bm_supplier;
-    private String bk_namabarang, bk_tglBarang, bk_jumlahBarang, bk_tujuanBarang;
+    private String idPO, namaBarang;
+    private String jumlahBarang;
+    private String hargaBarang, discountPO, totalHarga;
 
-    public String getBm_namabarang() {
-        return bm_namabarang;
+    public KartuStok(){
+
     }
 
-    public void setBm_namabarang(String bm_namabarang) {
-        this.bm_namabarang = bm_namabarang;
+    public KartuStok(String idPO, String namaBarang, String jumlahBarang, String hargaBarang, String discountPO, String totalHarga){
+       this.idPO = idPO;
+       this.namaBarang = namaBarang;
+       this.jumlahBarang = jumlahBarang;
+       this.hargaBarang = hargaBarang;
+       this.discountPO = discountPO;
+       this.totalHarga = totalHarga;
     }
 
-    public String getBm_tglBarang() {
-        return bm_tglBarang;
+    public String getIdPO() {
+        return idPO;
     }
 
-    public void setBm_tglBarang(String bm_tglBarang) {
-        this.bm_tglBarang = bm_tglBarang;
+    public void setIdPO(String idPO) {
+        this.idPO = idPO;
     }
 
-    public String getBm_jumlahBarang() {
-        return bm_jumlahBarang;
+    public String getNamaBarang() {
+        return namaBarang;
     }
 
-    public void setBm_jumlahBarang(String bm_jumlahBarang) {
-        this.bm_jumlahBarang = bm_jumlahBarang;
+    public void setNamaBarang(String namaBarang) {
+        this.namaBarang = namaBarang;
     }
 
-    public String getBm_supplier() {
-        return bm_supplier;
+    public String getJumlahBarang() {
+        return jumlahBarang;
     }
 
-    public void setBm_supplier(String bm_supplier) {
-        this.bm_supplier = bm_supplier;
+    public void setJumlahBarang(String jumlahBarang) {
+        this.jumlahBarang = jumlahBarang;
     }
 
-    public String getBk_namabarang() {
-        return bk_namabarang;
+    public String getHargaBarang() {
+        return hargaBarang;
     }
 
-    public void setBk_namabarang(String bk_namabarang) {
-        this.bk_namabarang = bk_namabarang;
+    public void setHargaBarang(String hargaBarang) {
+        this.hargaBarang = hargaBarang;
     }
 
-    public String getBk_tglBarang() {
-        return bk_tglBarang;
+    public String getDiscountPO() {
+        return discountPO;
     }
 
-    public void setBk_tglBarang(String bk_tglBarang) {
-        this.bk_tglBarang = bk_tglBarang;
+    public void setDiscountPO(String discountPO) {
+        this.discountPO = discountPO;
     }
 
-    public String getBk_jumlahBarang() {
-        return bk_jumlahBarang;
+    public String getTotalHarga() {
+        return totalHarga;
     }
 
-    public void setBk_jumlahBarang(String bk_jumlahBarang) {
-        this.bk_jumlahBarang = bk_jumlahBarang;
+    public void setTotalHarga(String totalHarga) {
+        this.totalHarga = totalHarga;
     }
-
-    public String getBk_tujuanBarang() {
-        return bk_tujuanBarang;
-    }
-
-    public void setBk_tujuanBarang(String bk_tujuanBarang) {
-        this.bk_tujuanBarang = bk_tujuanBarang;
-    }
-
-    public KartuStok(String bm_namabarang, String bm_tglBarang, String bm_jumlahBarang, String bm_supplier, String bk_namabarang, String bk_tglBarang, String bk_jumlahBarang, String bk_tujuanBarang){
-        this.bm_namabarang = bm_namabarang;
-        this.bm_tglBarang = bm_tglBarang;
-        this.bm_jumlahBarang = bm_jumlahBarang;
-        this.bm_supplier = bm_supplier;
-        this.bk_namabarang = bk_namabarang;
-        this.bk_tglBarang = bk_tglBarang;
-        this.bk_jumlahBarang = bk_jumlahBarang;
-        this.bk_tujuanBarang = bk_tujuanBarang;
-    }
-
-
 }

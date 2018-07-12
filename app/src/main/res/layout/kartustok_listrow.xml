@@ -17,36 +17,17 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/ks_"
-            android:layout_width="110dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txtjumlahbarang"
-            android:text="ID PO" />
-        <TextView
-            android:id="@+id/ks_setIDks"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Peminta"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="30px">
 
         <TextView
-            android:id="@+id/ks_namaBarang"
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:text="Nama Barang:" />
 
         <TextView
-            android:id="@+id/ks_setNamaBarang"
+            android:id="@+id/ks_namaBarang"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -61,18 +42,16 @@
         android:layout_marginTop="30px">
 
         <TextView
-            android:id="@+id/ks_jumlahBarang"
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/txtnamabarang"
-            android:text="Jumlah Barang:" />
+            android:text="Jumlah Barang" />
 
         <TextView
-            android:id="@+id/ks_setJumlahBarang"
+            android:id="@+id/ks_jumlahBarang"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="JumlahBarang"/>
-
+            android:text="Stok" />
     </LinearLayout>
 
     <LinearLayout
@@ -82,16 +61,22 @@
         android:layout_marginTop="30px">
 
         <TextView
-            android:id="@+id/ks_hargaBarang"
             android:layout_width="110dp"
             android:layout_height="wrap_content"
-            android:text="Harga Barang:" />
+            android:layout_below="@id/txtnamabarang"
+            android:text="Tanggal:" />
 
         <TextView
-            android:id="@+id/ks_setHargaBarang"
-            android:layout_width="wrap_content"
+            android:id="@+id/ks_tglKeluar"
+            android:layout_width="140dp"
             android:layout_height="match_parent"
-            android:text="HargaBarang"/>
+            android:text="tglKeluar" />
+
+        <TextView
+            android:id="@+id/ks_tglMasuk"
+            android:layout_width="140dp"
+            android:layout_height="match_parent"
+            android:text="tglMasuk" />
     </LinearLayout>
 
     <LinearLayout
@@ -101,36 +86,22 @@
         android:layout_marginTop="30px">
 
         <TextView
-            android:id="@+id/ks_discountBarang"
             android:layout_width="110dp"
             android:layout_height="wrap_content"
-            android:text="Discount Barang:" />
+            android:layout_below="@id/txtnamabarang"
+            android:text="Mitra/Supplier:" />
 
         <TextView
-            android:id="@+id/ks_setDiscountBarang"
-            android:layout_width="wrap_content"
+            android:id="@+id/ks_tujuan"
+            android:layout_width="140dp"
             android:layout_height="match_parent"
-            android:text="DiscountBarang"/>
+            android:text="tujuan" />
+
+        <TextView
+            android:id="@+id/ks_supplier"
+            android:layout_width="140dp"
+            android:layout_height="match_parent"
+            android:text="supplier" />
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="30px">
-
-        <TextView
-            android:id="@+id/ks_grandTOtal"
-            android:layout_width="110dp"
-            android:layout_height="wrap_content"
-            android:text="Harga Total:" />
-
-        <TextView
-            android:id="@+id/ks_setHargaTotal"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Harga Total"/>
-    </LinearLayout>
-
-
- </LinearLayout>
+</LinearLayout>

@@ -1,13 +1,10 @@
-package github.tupir.sabaa.fragment;
+package github.tupir.sabaa;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -24,47 +21,41 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-import github.tupir.sabaa.AppController;
-import github.tupir.sabaa.MasterActivity;
-import github.tupir.sabaa.R;
 import github.tupir.sabaa.adapter.AdapterKS;
+import github.tupir.sabaa.adapter.AdapterStockCard;
 import github.tupir.sabaa.adapter.KartuStok;
 import github.tupir.sabaa.insert.masterbaranginsert;
+import github.tupir.sabaa.insert.poInsert;
+
 
 import static github.tupir.sabaa.AppController.TAG;
 
-
-public class ksFragment extends Fragment {
-    private Button button1;
+public class POActivity extends AppCompatActivity{
+    private Button buttonPO;
     private static final String url = "http://192.168.43.20/sabaa/purchaseOrder.php";
     private List<KartuStok> ksList = new ArrayList<KartuStok>();
     private ListView lv;
     private AdapterKS adapter;
 
-    public static ksFragment newInstance() {
-        ksFragment fragment = new ksFragment();
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-    }
+        setContentView(R.layout.activity_purchaseorder);
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_ks, container, false);
-        rootView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-
-        lv = (ListView) rootView.findViewById(R.id.listKS);
-
+        lv = (ListView) findViewById(R.id.listPurchaseOrder);
         ksList = new ArrayList<KartuStok>();
-        adapter = new AdapterKS(getActivity(), ksList);
-        lv.setAdapter(adapter);
+        adapter = new AdapterKS(POActivity.this, ksList);
+
+        buttonPO = (Button) findViewById(R.id.btnInPO);
+        buttonPO.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(POActivity.this, poInsert.class);
+                startActivity(intent);
+            }
+        });
 
         //Create JsonObjectRequest
-        JsonObjectRequest mbRequest = new JsonObjectRequest(Request.Method.GET, url, null,new Response.Listener<JSONObject>(){
+        JsonObjectRequest bmRequest = new JsonObjectRequest(Request.Method.GET, url, null,new Response.Listener<JSONObject>(){
             @Override
             public void onResponse(JSONObject response) {
                 Log.d(TAG, response.toString());
@@ -80,7 +71,6 @@ public class ksFragment extends Fragment {
                         ks.setHargaBarang(json.getString("hargaBarang"));
                         ks.setDiscountPO(json.getString("discountBarang"));
                         ks.setTotalHarga(json.getString("grandTotal"));
-
                         //Adding data into array
                         ksList.add(ks);
                     }
@@ -89,10 +79,7 @@ public class ksFragment extends Fragment {
                     e.printStackTrace();
                     e.getMessage();
                 }
-                // notifying list adapter about data changes
-                // so that it renders the list view with updated data
                 adapter.notifyDataSetChanged();
-
             }
         }, new Response.ErrorListener() {
             @Override
@@ -101,15 +88,7 @@ public class ksFragment extends Fragment {
             }
         });
         // Adding request to request queue
-        AppController.getInstance().addToRequestQueue(mbRequest);
-        return rootView;
+        AppController.getInstance().addToRequestQueue(bmRequest);
+        lv.setAdapter(adapter);
     }
-
-
-    @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-            }
 }
-

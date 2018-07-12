@@ -2,28 +2,23 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_shop"
-        android:icon="@drawable/ic_store_white_24dp"
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/homeoutline"
         android:title="Home" />
 
     <item
-        android:id="@+id/navigation_gifts"
-        android:icon="@drawable/ic_card_giftcard_white_24dp"
+        android:id="@+id/navigation_barangkeluar"
+        android:icon="@drawable/basketunfill"
         android:title="Barang Keluar" />
 
     <item
-        android:id="@+id/navigation_cart"
-        android:icon="@drawable/ic_shopping_cart_white_24dp"
+        android:id="@+id/navigation_barangmasuk"
+        android:icon="@drawable/basketfill"
         android:title="Barang Masuk" />
 
     <item
-        android:id="@+id/navigation_profile"
+        android:id="@+id/navigation_mintabarang"
         android:icon="@drawable/ic_person_white_24dp"
         android:title="Minta Barang" />
-
-    <item
-        android:id="@+id/navigation_ks"
-        android:icon="@drawable/ic_person_white_24dp"
-        android:title="Kartu Stok" />
 
 </menu>

@@ -41,12 +41,14 @@ import static github.tupir.sabaa.AppController.TAG;
 
 public class bmInsert extends AppCompatActivity{
     Button btnSimpan;
-    Spinner spinner;
+    Spinner spinner, spinner1;
     String url = "http://192.168.43.20/sabaa/ambilNamaBarang.php";
     String inputUrl = "http://192.168.43.20/sabaa/insertBarangMasuk.php";
+    String supplier = "http://192.168.43.20/sabaa/ambilNamaSupplier.php";
     ArrayList<String> Namabarang;
     ArrayList<String> Idbarang;
-    TextView err,bmsupplier, bmjumlah, bmdate;
+    ArrayList<String> Namasupplier;
+    TextView err, bmjumlah, bmdate;
     String suupplierHolder, jumlahHolder, idbarangHolder, namaHolder, dateHolder;
     DatePickerDialog datePickerDialog;
 
@@ -56,13 +58,15 @@ public class bmInsert extends AppCompatActivity{
        setContentView(R.layout.insertbm);
        Namabarang = new ArrayList<>();
        Idbarang = new ArrayList<>();
+       Namasupplier = new ArrayList<>();
        err = (TextView) findViewById(R.id.bmidbarang);
 
-       bmsupplier = (TextView) findViewById(R.id.inputBM_Supplier);
        bmjumlah   = (TextView) findViewById(R.id.inputBM_Jumlah);
        bmdate     = (TextView) findViewById(R.id.inputBM_Date);
        spinner    = (Spinner) findViewById(R.id.spinnerBM);
-        loadSpinnerData(url);
+       spinner1   = (Spinner) findViewById(R.id.spinnerSup);
+        loadNamaBarang(url);
+        loadSupplier(supplier);
 
         bmdate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,6 +88,18 @@ public class bmInsert extends AppCompatActivity{
                             }
                         }, mYear, mMonth, mDay);
                 datePickerDialog.show();
+            }
+        });
+
+        spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
             }
         });
 
@@ -150,7 +166,7 @@ public class bmInsert extends AppCompatActivity{
     }
 
 
-    private void loadSpinnerData(String url) {
+    private void loadNamaBarang(String url) {
         JsonObjectRequest bkRequest = new JsonObjectRequest(Request.Method.GET, url, null,new Response.Listener<JSONObject>(){
             @Override
             public void onResponse(JSONObject response) {
@@ -182,8 +198,39 @@ public class bmInsert extends AppCompatActivity{
         AppController.getInstance().addToRequestQueue(bkRequest);
     }
 
+    private void loadSupplier(String url) {
+        JsonObjectRequest bkRequest = new JsonObjectRequest(Request.Method.GET, url, null,new Response.Listener<JSONObject>(){
+            @Override
+            public void onResponse(JSONObject response) {
+                Log.d(TAG, response.toString());
+
+                try {
+                    JSONArray obj = response.getJSONArray("result");
+                    for(int i=0;i< obj.length();i++) {
+                        JSONObject json     = obj.getJSONObject(i);
+                        String id = json.getString("idSupplier");
+                        String nama = json.getString("namaSupplier");
+                        Namasupplier.add(nama);
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    e.getMessage();
+                }
+                spinner1.setAdapter(new ArrayAdapter<String>(bmInsert.this, android.R.layout.simple_spinner_dropdown_item, Namasupplier));
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                VolleyLog.d(TAG, "Error: " + error.getMessage());
+            }
+        });
+        // Adding request to request queue
+        AppController.getInstance().addToRequestQueue(bkRequest);
+    }
+
     public void GetValueFromEditText(){
-        suupplierHolder=  bmsupplier.getText().toString();
+        suupplierHolder=  spinner1.getSelectedItem().toString();
         jumlahHolder   =  bmjumlah.getText().toString();
         namaHolder     =  spinner.getSelectedItem().toString();
         idbarangHolder =  err.getText().toString();

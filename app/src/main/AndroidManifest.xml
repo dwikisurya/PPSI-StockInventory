@@ -25,6 +25,26 @@
             android:label="Sabaa">
         </activity>
 
+           <activity
+           android:name=".MasterActivity"
+           android:label="Sabaa">
+       </activity>
+           <activity
+               android:name=".insert.masterbaranginsert"
+               android:label="Sabaa">
+           </activity>
+           <activity
+               android:name=".StockCardActivity"
+               android:label="Sabaa">
+           </activity>
+           <activity
+               android:name=".POActivity"
+               android:label="Sabaa">
+           </activity>
+           <activity
+               android:name=".insert.poInsert"
+               android:label="Sabaa">
+           </activity>
         <activity
             android:name=".insert.mbInsert"
             android:label="Sabaa">

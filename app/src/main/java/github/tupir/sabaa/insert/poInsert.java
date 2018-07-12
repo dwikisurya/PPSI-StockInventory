@@ -34,40 +34,41 @@ import java.util.Map;
 
 import github.tupir.sabaa.AppController;
 import github.tupir.sabaa.MainActivity;
+import github.tupir.sabaa.POActivity;
 import github.tupir.sabaa.R;
 
 import static github.tupir.sabaa.AppController.TAG;
 
-public class bkInsert extends AppCompatActivity {
-    Button btnsimpanBK;
-    Spinner spinner,spinner1;
-    String url = "http://192.168.43.20/sabaa/ambilNamaBarang.php";
-    String inputUrl = "http://192.168.43.20/sabaa/insertBarangKeluar.php";
-    String mitra = "http://192.168.43.20/sabaa/ambilNamaMitra.php";
-    ArrayList<String> Namabarang;
-    ArrayList<String> Idbarang;
-    ArrayList<String> Namamitra;
-    TextView err,bktujuan, bkjumlah, bkdate;
-    String tujuanHolder, jumlahHolder, idbarangHolder, namaHolder, dateHolder;
+public class poInsert extends AppCompatActivity {
+    Button btnSimpan;
+    Spinner spinner;
+    String inputUrl = "http://192.168.43.20/sabaa/inputPO.php";
+    String supplier = "http://192.168.43.20/sabaa/ambilNamaSupplier.php";
+    ArrayList<String> Namasupplier;
+    ArrayList<String> Idsupplier;
+    TextView pojumlah, podate, poharga, poDiskon, poIdmitra, poNamaBarang;
+    String idHolder, namaholder,jumlahHolder, hargaHolder, dateHolder, diskonHolder;
     DatePickerDialog datePickerDialog;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.insertbk);
-        Namabarang = new ArrayList<>();
-        Idbarang = new ArrayList<>();
-        Namamitra = new ArrayList<>();
-        err = (TextView) findViewById(R.id.bkidbarang);
-        bkjumlah = (TextView) findViewById(R.id.inputBK_Jumlah);
-        bkdate = (TextView) findViewById(R.id.inputBK_Date);
-        spinner = (Spinner) findViewById(R.id.bmspinner);
-        spinner1 = (Spinner) findViewById(R.id.bmspinner1);
-        loadSpinnerData(url);
-        loadnamaMitra(mitra);
+        setContentView(R.layout.insertpo);
+        Namasupplier = new ArrayList<>();
+        Idsupplier = new ArrayList<>();
+        poIdmitra  = (TextView) findViewById(R.id.po_idsupp);
+        poNamaBarang = (TextView) findViewById(R.id.po_namabarang);
+        pojumlah   = (TextView) findViewById(R.id.po_jumlah);
+        poharga    = (TextView) findViewById(R.id.po_harga);
+        pojumlah   = (TextView) findViewById(R.id.po_jumlah);
+        podate     = (TextView) findViewById(R.id.po_date);
+        poDiskon   = (TextView) findViewById(R.id.po_diskon) ;
 
-        bkdate.setOnClickListener(new View.OnClickListener() {
+        spinner    = (Spinner) findViewById(R.id.spinnerSUP);
+        loadSupplier(supplier);
+
+        podate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 final Calendar c = Calendar.getInstance();
@@ -75,14 +76,14 @@ public class bkInsert extends AppCompatActivity {
                 int mMonth = c.get(Calendar.MONTH); // current month
                 int mDay = c.get(Calendar.DAY_OF_MONTH); // current day
                 // date picker dialog
-                datePickerDialog = new DatePickerDialog(bkInsert.this,
+                datePickerDialog = new DatePickerDialog(poInsert.this,
                         new DatePickerDialog.OnDateSetListener() {
 
                             @Override
                             public void onDateSet(DatePicker view, int year,
                                                   int monthOfYear, int dayOfMonth) {
                                 // set day of month , month and year value in the edit text
-                                bkdate.setText(year + "-"
+                                podate.setText(year + "-"
                                         + (monthOfYear + 1) + "-" + dayOfMonth);
                             }
                         }, mYear, mMonth, mDay);
@@ -90,24 +91,12 @@ public class bkInsert extends AppCompatActivity {
             }
         });
 
-        spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 int i = spinner.getSelectedItemPosition();
-                err.setText(Idbarang.get(i));
-                err.setEnabled(false);
+                poIdmitra.setText(Idsupplier.get(i));
+                poIdmitra.setEnabled(false);
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
@@ -115,28 +104,24 @@ public class bkInsert extends AppCompatActivity {
             }
         });
 
-        btnsimpanBK = (Button) findViewById(R.id.btnSimpanBK);
-
-        btnsimpanBK.setOnClickListener(new View.OnClickListener() {
+        btnSimpan = (Button)findViewById(R.id.btn_simpanPO);
+        btnSimpan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Calling method to get value from EditText.
                 GetValueFromEditText();
-
-                // Creating string request with post method.
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, inputUrl,
                         new Response.Listener<String>() {
                             @Override
                             public void onResponse(String ServerResponse) {
                                 // Showing response message coming from server.
-                                Toast.makeText(bkInsert.this, ServerResponse, Toast.LENGTH_LONG).show();
+                                Toast.makeText(poInsert.this, ServerResponse, Toast.LENGTH_LONG).show();
                             }
                         },
                         new Response.ErrorListener() {
                             @Override
                             public void onErrorResponse(VolleyError volleyError) {
                                 // Showing error message if something goes wrong.
-                                Toast.makeText(bkInsert.this, volleyError.toString(), Toast.LENGTH_LONG).show();
+                                Toast.makeText(poInsert.this, volleyError.toString(), Toast.LENGTH_LONG).show();
                                 volleyError.getStackTrace();
                             }
                         }) {
@@ -146,28 +131,28 @@ public class bkInsert extends AppCompatActivity {
                         Map<String, String> params = new HashMap<String, String>();
 
                         // Adding All values to Params.
-                        params.put("idBarang", idbarangHolder);
-                        params.put("namaBarang", namaHolder);
+                        params.put("idSupplier", idHolder);
+                        params.put("namaBarang", namaholder);
+                        params.put("tglPO", dateHolder);
                         params.put("jumlahBarang", jumlahHolder);
-                        params.put("tglKeluar", dateHolder);
-                        params.put("tujuanBarang", tujuanHolder);
-
+                        params.put("hargaBarang", hargaHolder);
+                        params.put("discount", diskonHolder);
                         return params;
                     }
 
                 };
                 // Creating RequestQueue.
-                RequestQueue requestQueue = Volley.newRequestQueue(bkInsert.this);
+                RequestQueue requestQueue = Volley.newRequestQueue(poInsert.this);
                 // Adding the StringRequest object into requestQueue.
                 requestQueue.add(stringRequest);
-                Intent intent = new Intent(bkInsert.this, MainActivity.class);
+                Intent intent = new Intent(poInsert.this, POActivity.class);
                 startActivity(intent);
             }
         });
     }
 
-    private void loadSpinnerData(String url) {
-        JsonObjectRequest bkRequest = new JsonObjectRequest(Request.Method.GET, url, null,new Response.Listener<JSONObject>(){
+    private void loadSupplier(String url) {
+        JsonObjectRequest bmRequest = new JsonObjectRequest(Request.Method.GET, url, null,new Response.Listener<JSONObject>(){
             @Override
             public void onResponse(JSONObject response) {
                 Log.d(TAG, response.toString());
@@ -176,17 +161,17 @@ public class bkInsert extends AppCompatActivity {
                     JSONArray obj = response.getJSONArray("result");
                     for(int i=0;i< obj.length();i++) {
                         JSONObject json     = obj.getJSONObject(i);
-                        String id = json.getString("idBarang");
-                        String nama = json.getString("namaBarang");
-                        Namabarang.add(nama);
-                        Idbarang.add(id);
+                        String id = json.getString("idSupplier");
+                        String nama = json.getString("namaSupplier");
+                        Namasupplier.add(nama);
+                        Idsupplier.add(id);
                     }
 
                 } catch (JSONException e) {
                     e.printStackTrace();
                     e.getMessage();
                 }
-                spinner.setAdapter(new ArrayAdapter<String>(bkInsert.this, android.R.layout.simple_spinner_dropdown_item, Namabarang));
+                spinner.setAdapter(new ArrayAdapter<String>(poInsert.this, android.R.layout.simple_spinner_dropdown_item, Namasupplier));
             }
         }, new Response.ErrorListener() {
             @Override
@@ -195,45 +180,17 @@ public class bkInsert extends AppCompatActivity {
             }
         });
         // Adding request to request queue
-        AppController.getInstance().addToRequestQueue(bkRequest);
-    }
-
-    private void loadnamaMitra(String url) {
-        JsonObjectRequest bkRequest = new JsonObjectRequest(Request.Method.GET, url, null,new Response.Listener<JSONObject>(){
-            @Override
-            public void onResponse(JSONObject response) {
-                Log.d(TAG, response.toString());
-
-                try {
-                    JSONArray obj = response.getJSONArray("result");
-                    for(int i=0;i< obj.length();i++) {
-                        JSONObject json     = obj.getJSONObject(i);
-                        String nama = json.getString("namaMitra");
-                        Namamitra.add(nama);
-                    }
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                    e.getMessage();
-                }
-                spinner1.setAdapter(new ArrayAdapter<String>(bkInsert.this, android.R.layout.simple_spinner_dropdown_item, Namamitra));
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                VolleyLog.d(TAG, "Error: " + error.getMessage());
-            }
-        });
-        // Adding request to request queue
-        AppController.getInstance().addToRequestQueue(bkRequest);
+        AppController.getInstance().addToRequestQueue(bmRequest);
     }
 
     public void GetValueFromEditText(){
-        tujuanHolder   =  spinner1.getSelectedItem().toString();
-        jumlahHolder   =  bkjumlah.getText().toString();
-        namaHolder     =  spinner.getSelectedItem().toString();
-        idbarangHolder =  err.getText().toString();
-        dateHolder     =  bkdate.getText().toString();
+        idHolder   =  poIdmitra.getText().toString();
+        namaholder   =  poNamaBarang.getText().toString();
+        dateHolder       =  podate.getText().toString();
+        jumlahHolder     =  pojumlah.getText().toString();
+        hargaHolder     = poharga.getText().toString();
+        diskonHolder       =  poDiskon.getText().toString();
     }
+
 }
 

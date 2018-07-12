@@ -40,6 +40,7 @@
                 android:id="@+id/spinnerBM"
                 android:layout_width="match_parent"
                 android:layout_height="50dp" />
+
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -77,12 +78,15 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp">
 
-            <EditText
-                android:id="@+id/inputBM_Supplier"
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:hint="Supplier"
-                android:inputType="text" />
+                android:layout_height="wrap_content"
+                android:text="Supplier" />
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/spinnerSup"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
 
         </android.support.design.widget.TextInputLayout>
 

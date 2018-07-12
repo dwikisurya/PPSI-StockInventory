@@ -12,44 +12,60 @@
         android:paddingRight="20dp"
         android:paddingTop="25dp">
 
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/a"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
             <EditText
-                android:id="@+id/bkidbarang"
+                android:id="@+id/po_idsupp"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:hint="Id Barang"
+                android:hint="Id Mitra"
                 android:inputType="none" />
-
-        </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/input_layout_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="10dp">
+
+            <EditText
+                android:id="@+id/po_namabarang"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Nama Barang"
+                android:inputType="none" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_nam"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Nama Barang" />
+                android:text="Nama Supplier" />
 
             <android.support.v7.widget.AppCompatSpinner
-                android:id="@+id/bmspinner"
+                android:id="@+id/spinnerSUP"
                 android:layout_width="match_parent"
                 android:layout_height="50dp" />
+
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/input_layout_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="10dp">
 
             <EditText
-                android:id="@+id/inputBK_Jumlah"
+                android:id="@+id/po_jumlah"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:hint="Input Jumlah Barang"
@@ -60,10 +76,10 @@
             android:id="@+id/input_layout_P"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="10dp">
 
             <EditText
-                android:id="@+id/inputBK_Date"
+                android:id="@+id/po_date"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_centerHorizontal="true"
@@ -72,28 +88,38 @@
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
-            android:id="@+id/input_layout_M"
+            android:id="@+id/input_layout_pas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <EditText
+                android:id="@+id/po_harga"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Harga Barang"
+                android:inputType="number" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp">
 
-            <TextView
+            <EditText
+                android:id="@+id/po_diskon"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Tujuan" />
-
-            <android.support.v7.widget.AppCompatSpinner
-                android:id="@+id/bmspinner1"
-                android:layout_width="match_parent"
-                android:layout_height="50dp" />
-
+                android:layout_height="50dp"
+                android:hint="Diskon"
+                android:inputType="numberDecimal" />
         </android.support.design.widget.TextInputLayout>
 
         <Button
-            android:id="@+id/btnSimpanBK"
+            android:id="@+id/btn_simpanPO"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="10dp"
             android:background="@color/colorPrimary"
             android:text="Simpan"
             android:textColor="@android:color/white" />

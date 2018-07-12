@@ -20,13 +20,12 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/mb_pemintaBarang"
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/txtjumlahbarang"
-            android:text="Peminta Barang:" />
+            android:text="ID Barang:" />
         <TextView
-            android:id="@+id/mb_setPemintaBarang"
+            android:id="@+id/masterBarang_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Peminta"/>
@@ -39,14 +38,13 @@
         android:layout_marginTop="30px">
 
         <TextView
-            android:id="@+id/mb_namaBarang"
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:text="Nama Barang:" />
 
         <TextView
-            android:id="@+id/mb_setNamaBarang"
+            android:id="@+id/masterBarang_nama"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -61,37 +59,17 @@
         android:layout_marginTop="30px">
 
         <TextView
-            android:id="@+id/mb_jumlahBarang"
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/txtnamabarang"
-            android:text="Jumlah Barang:" />
+            android:text="Stok Barang:" />
 
         <TextView
-            android:id="@+id/mb_setJumlahBarang"
+            android:id="@+id/masterBarang_stok"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="JumlahBarang"/>
+            android:text="Stok"/>
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="30px">
-
-        <TextView
-            android:id="@+id/mb_tglBarang"
-            android:layout_width="110dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txtjumlahbarang"
-            android:text="Tanggal Minta:" />
-        <TextView
-            android:id="@+id/mb_setTglBarang"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tanggal keluar"/>
     </LinearLayout>
 
 </LinearLayout>

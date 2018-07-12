@@ -6,19 +6,11 @@
     android:orientation="vertical">
 
     <ListView
-        android:id="@+id/listBM"
+        android:id="@+id/listKartuStok"
         android:layout_width="match_parent"
         android:layout_height="540dp"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true" />
-
-    <Button
-        android:id="@+id/btnFragmentBM"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="@color/colorPrimary"
-        android:text="Tambah Data"
-        android:textColor="@android:color/white" />
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp" />
 
 </LinearLayout>

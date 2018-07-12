@@ -36,7 +36,7 @@ import static github.tupir.sabaa.AppController.TAG;
 
 public class mbFragment extends Fragment{
     private Button button1;
-    private static final String url = "http://192.168.43.20/sabaa/mintabarang.php";
+    private static final String url = "http://192.168.43.20/sabaa/mintaBarang.php";
     private List<MintaBarang> mbList = new ArrayList<MintaBarang>();
     private ListView lv;
     private AdapterMB adapter;
@@ -55,10 +55,10 @@ public class mbFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View rootView = inflater.inflate(R.layout.fragment_bm, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_mb, container, false);
         rootView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
 
-        lv = (ListView) rootView.findViewById(R.id.list);
+        lv = (ListView) rootView.findViewById(R.id.listMB);
 
         mbList = new ArrayList<MintaBarang>();
         adapter = new AdapterMB(getActivity(), mbList);
@@ -75,9 +75,10 @@ public class mbFragment extends Fragment{
                     for(int i=0;i< obj.length();i++) {
                         JSONObject json     = obj.getJSONObject(i);
                         MintaBarang mb = new MintaBarang();
-                        mb.setNamaBarang(json.getString("namaBarang"));
-                        mb.setJumlahBarang(json.getString("jumlahBarang"));
-                        mb.setTglBarang(json.getString("tglKel"));
+                        mb.setPemintaBarang(json.getString("pemintaMB"));
+                        mb.setNamaBarang(json.getString("barangMB"));
+                        mb.setJumlahBarang(json.getString("jumlahMB"));
+                        mb.setTglBarang(json.getString("tglMB"));
 
                         //Adding data into array
                         mbList.add(mb);
