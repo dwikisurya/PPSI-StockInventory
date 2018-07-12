@@ -26,7 +26,7 @@ import github.tupir.sabaa.R;
 
 public class masterbaranginsert extends AppCompatActivity {
     Button btnPost;
-    String inputUrl = "http://192.168.43.20/sabaa/insertMasterBarang.php";
+    String inputUrl = "http://<your-url-here>/sabaa/insertMasterBarang.php";
     TextView masterID, masterNama, masterStok;
     String idHolder, namaHolder, stokHolder;
 

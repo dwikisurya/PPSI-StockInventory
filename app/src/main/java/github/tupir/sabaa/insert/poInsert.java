@@ -42,8 +42,8 @@ import static github.tupir.sabaa.AppController.TAG;
 public class poInsert extends AppCompatActivity {
     Button btnSimpan;
     Spinner spinner;
-    String inputUrl = "http://192.168.43.20/sabaa/inputPO.php";
-    String supplier = "http://192.168.43.20/sabaa/ambilNamaSupplier.php";
+    String inputUrl = "http://<your-url-here>/sabaa/inputPO.php";
+    String supplier = "http://<your-url-here>/sabaa/ambilNamaSupplier.php";
     ArrayList<String> Namasupplier;
     ArrayList<String> Idsupplier;
     TextView pojumlah, podate, poharga, poDiskon, poIdmitra, poNamaBarang;

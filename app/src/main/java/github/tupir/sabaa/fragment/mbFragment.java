@@ -36,7 +36,7 @@ import static github.tupir.sabaa.AppController.TAG;
 
 public class mbFragment extends Fragment{
     private Button button1;
-    private static final String url = "http://192.168.43.20/sabaa/mintaBarang.php";
+    private static final String url = "http://<your-url-here>/sabaa/mintaBarang.php";
     private List<MintaBarang> mbList = new ArrayList<MintaBarang>();
     private ListView lv;
     private AdapterMB adapter;

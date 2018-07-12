@@ -36,7 +36,7 @@ import static github.tupir.sabaa.AppController.TAG;
 
 public class ksFragment extends Fragment {
     private Button button1;
-    private static final String url = "http://192.168.43.20/sabaa/purchaseOrder.php";
+    private static final String url = "http://<your-url-here>/sabaa/purchaseOrder.php";
     private List<KartuStok> ksList = new ArrayList<KartuStok>();
     private ListView lv;
     private AdapterKS adapter;

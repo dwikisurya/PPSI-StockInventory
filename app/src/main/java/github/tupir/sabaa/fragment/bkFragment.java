@@ -39,7 +39,7 @@ import static github.tupir.sabaa.AppController.TAG;
 public class bkFragment extends Fragment {
     private Button button1;
 
-    private static final String url = "http://192.168.43.20/sabaa/barangKeluar.php";
+    private static final String url = "http://<your-url-here>/sabaa/barangKeluar.php";
     private List<BarangKeluar> bkList = new ArrayList<BarangKeluar>();
     private ListView lv;
     private CustomListAdapter adapter;

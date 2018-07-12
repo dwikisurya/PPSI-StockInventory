@@ -42,9 +42,9 @@ import static github.tupir.sabaa.AppController.TAG;
 public class bmInsert extends AppCompatActivity{
     Button btnSimpan;
     Spinner spinner, spinner1;
-    String url = "http://192.168.43.20/sabaa/ambilNamaBarang.php";
-    String inputUrl = "http://192.168.43.20/sabaa/insertBarangMasuk.php";
-    String supplier = "http://192.168.43.20/sabaa/ambilNamaSupplier.php";
+    String url = "http://<your-url-here>/sabaa/ambilNamaBarang.php";
+    String inputUrl = "http://<your-url-here>/sabaa/insertBarangMasuk.php";
+    String supplier = "http://<your-url-here>/sabaa/ambilNamaSupplier.php";
     ArrayList<String> Namabarang;
     ArrayList<String> Idbarang;
     ArrayList<String> Namasupplier;

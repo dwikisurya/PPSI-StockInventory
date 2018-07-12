@@ -43,9 +43,9 @@ import static github.tupir.sabaa.AppController.TAG;
 public class mbInsert extends AppCompatActivity {
     Button btnSimpan;
     Spinner spinner, spinner1;
-    String inputUrl = "http://192.168.43.20/sabaa/inputMintaBarang.php";
-    String namaBarang = "http://192.168.43.20/sabaa/ambilNamaBarang.php";
-    String supplier = "http://192.168.43.20/sabaa/ambilNamaMitra.php";
+    String inputUrl = "http://<your-url-here>/sabaa/inputMintaBarang.php";
+    String namaBarang = "http://<your-url-here>/sabaa/ambilNamaBarang.php";
+    String supplier = "http://<your-url-here>/sabaa/ambilNamaMitra.php";
     ArrayList<String> Namabarang;
     ArrayList<String> Namasupplier;
     ArrayList<String> Idbarang;

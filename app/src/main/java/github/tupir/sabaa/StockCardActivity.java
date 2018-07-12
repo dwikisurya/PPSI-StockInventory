@@ -24,7 +24,7 @@ import github.tupir.sabaa.adapter.stokCard;
 import static github.tupir.sabaa.AppController.TAG;
 
 public class StockCardActivity extends AppCompatActivity {
-    private static final String url = "http://192.168.43.20/sabaa/union.php";
+    private static final String url = "http://<your-url-here>/sabaa/union.php";
     private List<stokCard> stokList = new ArrayList<stokCard>();
     private ListView lv;
     private AdapterStockCard adapterStockCard;

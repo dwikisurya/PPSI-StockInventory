@@ -38,7 +38,7 @@ import github.tupir.sabaa.insert.masterbaranginsert;
 import static github.tupir.sabaa.AppController.TAG;
 
 public class MasterActivity extends AppCompatActivity {
-    private static final String url = "http://192.168.43.20/sabaa/ambilNamaBarang.php";
+    private static final String url = "http://<your-url-here>/sabaa/ambilNamaBarang.php";
     private List<MasterBarang> masterList = new ArrayList<MasterBarang>();
     private ListView lv;
     private AdapaterMasterBarang adapterMasterBarang;

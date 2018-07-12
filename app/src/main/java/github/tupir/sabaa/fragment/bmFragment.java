@@ -39,7 +39,7 @@ import static github.tupir.sabaa.AppController.TAG;
 
 public class bmFragment extends Fragment {
     private Button button1;
-    private static final String url = "http://192.168.43.20/sabaa/barangMasuk.php";
+    private static final String url = "http://<your-url-here>/sabaa/barangMasuk.php";
     private List<BarangMasuk> bmList = new ArrayList<BarangMasuk>();
     private ListView lv;
     private AdapterBM adapterBM;

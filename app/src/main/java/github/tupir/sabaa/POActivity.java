@@ -32,7 +32,7 @@ import static github.tupir.sabaa.AppController.TAG;
 
 public class POActivity extends AppCompatActivity{
     private Button buttonPO;
-    private static final String url = "http://192.168.43.20/sabaa/purchaseOrder.php";
+    private static final String url = "http://<your-url-here>/sabaa/purchaseOrder.php";
     private List<KartuStok> ksList = new ArrayList<KartuStok>();
     private ListView lv;
     private AdapterKS adapter;
